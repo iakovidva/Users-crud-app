@@ -5,17 +5,19 @@ import java.util.List;
 import com.springcrud.entity.User;
 
 public interface UsersService {
-	 // Save operation
+	
+	// Save user 
     User saveUser(User user);
  
-    // Read operation
+    // Get all users
     List<User> fetchUserList();
     
+    // Get user by id
     User getUser (Integer userId);
  
-    // Update operation
+    // Update user by id
     User updateUser(User user);
  
-    // Delete operation
+    // Delete user by id
     void deleteUsertById(Integer userId);
 }

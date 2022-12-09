@@ -17,26 +17,25 @@ public class UsersServiceImpl implements UsersService{
 	@Autowired
     private UsersRepository usersRepository;
 
+	// Save user 
 	@Override
 	public User saveUser(User user) {
 		return usersRepository.save(user);
 	}
-
+	
+	// Get all users
 	@Override
 	public List<User> fetchUserList() {
 		return (List<User>) usersRepository.findAll();
 	}
 	
+	// Get user by id
 	@Override
 	public User getUser(Integer userId) {
 		return (User) usersRepository.findById(userId).get();
 	}
 
-//	@Override
-//	public User updateUser(User user, Integer userId) {
-//		
-//		return user;
-//	}
+	// Update user by id
 	@Transactional
     public User updateUser(User newUser) {
 		Optional<User> userEntity = usersRepository.findById(newUser.getId());
@@ -51,6 +50,7 @@ public class UsersServiceImpl implements UsersService{
 		return usersRepository.save(user);
     }
 
+	// Delete user by id
 	@Override
 	public void deleteUsertById(Integer userId) {
 		usersRepository.deleteById(userId);

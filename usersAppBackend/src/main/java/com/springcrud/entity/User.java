@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class User {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
@@ -18,8 +19,8 @@ public class User {
 	private String home_address;
 	
 	public User() {
-
 	}
+	
 	public User(String name, String surname, String gender, String birthdate, String work_address, String home_address) {
 		super();
 		this.name = name;

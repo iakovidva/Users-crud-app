@@ -23,33 +23,32 @@ public class UsersController {
 	
     @Autowired private UsersService usersService;
     
-	// Save operation
+	// Save user 
     @PostMapping("/users")
     public User saveDepartment(@Validated @RequestBody User user){
         return usersService.saveUser(user);
     }
  
-    // Read operation
+    // Get all users
     @GetMapping("/users")
     public List<User> fetchDepartmentList(){
         return usersService.fetchUserList();
     }
     
-    // Read operation
+    // Get user by id
     @GetMapping("/users/{id}")
     public User getUser(@PathVariable("id") Integer userId){
         return usersService.getUser(userId);
     }
  
-    // Update operation
+    // Update user by id
     @PutMapping("/users/{id}")
     public User updateDepartment(@RequestBody User user, @PathVariable("id") Integer userId){
-    	System.out.println(user);
     	User upd = usersService.updateUser(user);
         return upd;
     }
  
-    // Delete operation
+    // Delete user by id
     @DeleteMapping("/users/{id}")
     public String deleteDepartmentById(@PathVariable("id") Integer userId){
     	usersService.deleteUsertById(userId);
