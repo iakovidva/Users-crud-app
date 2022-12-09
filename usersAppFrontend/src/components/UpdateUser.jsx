@@ -1,22 +1,16 @@
 import React, { Component } from "react";
 import { Modal, Button, Row, Col, Form } from "react-bootstrap";
 class UpdateUser extends Component {
+
     constructor(props){
         super(props);
-        this.state = {deps:[], snackbaropen: false, snackbarmsg: ''};
+        this.state = {deps:[]};
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    // snackbarClose = (event) =>{
-    //     this.setState({snackbaropen:false});
-    //   };
+
+    
     handleSubmit(event){
-        console.log(event.target.userId.value);
-        console.log(event.target.name.value);
-        console.log(event.target.surname.value);
-        console.log(event.target.gender.value);
-        console.log(event.target.birthdate.value);
-        console.log(event.target.work_address.value);
-        console.log(event.target.home_address.value);
+
       event.preventDefault();
       fetch('http://localhost:8080/users/'+this.props.userid,{
         method:'PUT',

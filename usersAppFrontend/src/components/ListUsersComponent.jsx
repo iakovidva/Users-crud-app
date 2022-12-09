@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import UpdateUser from "./UpdateUser";
 
 class ListUsersComponent extends Component {
-  // Constructor
+
   constructor(props) {
     super(props);
 
@@ -13,9 +13,9 @@ class ListUsersComponent extends Component {
       search_query: "",
     };
   }
-  search_keys = ["name", "surname", "work_address", "home_address"]; // For search
-  // ComponentDidMount is used to
-  // execute the code
+  search_keys = ["name", "surname", "work_address", "home_address"];
+
+  
   componentDidMount() {
     this.userslist();
   }
@@ -29,14 +29,11 @@ class ListUsersComponent extends Component {
       .then((res) => res.json())
       .then((json) => {
         this.setState({
-          // users: json  ** Xwris to search bar
-          // users: json.filter((item) =>item.name.includes(this.state.search_query)), // For search name
           users: json.filter((item) =>
             this.search_keys.some((key) =>
               item[key].toLowerCase().includes(this.state.search_query)
             )
-          ), // For search name,surname,work,home
-
+          ),
           DataisLoaded: true,
         });
       });

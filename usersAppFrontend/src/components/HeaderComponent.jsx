@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 
 class HeaderComponent extends Component {
-    state = {  } 
+    state = {} 
     render() { 
         return (
             <div>

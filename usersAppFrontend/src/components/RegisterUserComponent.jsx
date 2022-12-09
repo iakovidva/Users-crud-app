@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { Button, Form} from "react-bootstrap";
+import {Button, Form} from "react-bootstrap";
 
 class RegisterUserComponent extends Component {
     constructor(props){
