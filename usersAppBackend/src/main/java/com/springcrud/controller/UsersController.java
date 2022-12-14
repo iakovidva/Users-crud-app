@@ -25,13 +25,13 @@ public class UsersController {
     
 	// Save user 
     @PostMapping("/users")
-    public User saveDepartment(@Validated @RequestBody User user){
+    public User saveUser(@Validated @RequestBody User user){
         return usersService.saveUser(user);
     }
  
     // Get all users
     @GetMapping("/users")
-    public List<User> fetchDepartmentList(){
+    public List<User> fetchUserList(){
         return usersService.fetchUserList();
     }
     
@@ -43,14 +43,14 @@ public class UsersController {
  
     // Update user by id
     @PutMapping("/users/{id}")
-    public User updateDepartment(@RequestBody User user, @PathVariable("id") Integer userId){
+    public User updateUser(@RequestBody User user, @PathVariable("id") Integer userId){
     	User upd = usersService.updateUser(user);
         return upd;
     }
  
     // Delete user by id
     @DeleteMapping("/users/{id}")
-    public String deleteDepartmentById(@PathVariable("id") Integer userId){
+    public String deleteUserById(@PathVariable("id") Integer userId){
     	usersService.deleteUsertById(userId);
         return "Deleted Successfully";
     }
